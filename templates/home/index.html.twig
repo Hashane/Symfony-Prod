@@ -1,1 +1,22 @@
- <h1> Yooo my g</h1>
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent() }} Products {% endblock %}
+
+{% block body %}
+
+<h1> Products</h1>
+<p> Count: {{ productsCount }}</p>
+
+ {# Refactor this later #}
+ Product Name: {{ productName|title }} <br>
+
+ Inventory Status:
+ {% if productsCount > 5 %}
+    <p>Normal</p>
+ {% elseif productsCount < 5 %}
+    <p> Running low </p>
+ {% else %}
+     <p>Surplus</p>
+ {% endif %}
+
+{% endblock %}
